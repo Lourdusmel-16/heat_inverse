@@ -2,6 +2,11 @@ import deepxde as dde
 import numpy as np
 import streamlit as st
 
+st.title("Heat Inverse PINN Solver")
+x = st.slider("Select x", 0.0, 1.0, 0.5)
+t = st.slider("Select t", 0.0, 1.0, 0.5)
+
+
 def get_model():
 
     space = dde.geometry.Tnterval(0,1.0)
@@ -25,4 +30,6 @@ def pred_tem(x,t):
 
     return predicted[0][0]
 
-pred = pred_tem(0.5,0.5)
+if st.button("Predict Temperature"):
+    temp = pred_tem(x, t)
+    st.write(f"The predicted temperature is: {temp:.6f}")
