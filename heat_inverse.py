@@ -103,20 +103,4 @@ model.save('heat_model_weights')
 #plt.plot(variable_hist)
 
 
-# 1. Ensure we have the list of values
-# If variable_hist is a list of lists, use [v[0] for v in variable_hist]
-# If it's already a flat list, use it directly
-data = [v[0] if isinstance(v, (list, np.ndarray)) else v for v in variable_hist]
-
-# 2. Create the iteration steps (period=100)
-iterations = range(0, len(data) * 100, 100)
-
-# 3. Plot explicitly
-plt.figure(figsize=(8, 4))
-plt.plot(iterations, data, marker='o', linestyle='-', color='b')
-plt.xlabel("Iterations")
-plt.ylabel("Value of Alpha")
-plt.title("Convergence of Alpha over Training")
-plt.grid(True)
-plt.show()
 
