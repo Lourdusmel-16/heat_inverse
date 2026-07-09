@@ -20,9 +20,9 @@ def get_model():
     return dde.Model(data,network)
 
 model = get_model()
-
-model.restore("heat_model_weights-717.weights.h5")
 model.build()
+model.restore("heat_model_weights-717.weights.h5")
+
 def pred_tem(x,t):
 # note input kus be 2d array
     input = np.array([[x,t]])
