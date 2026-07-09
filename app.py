@@ -18,7 +18,7 @@ def get_model():
     data = dde.data.TimePDE(geotime,None,[],num_domain=0)
     model = dde.Model(data,network)
     input_dummy = np.array([[0.0,0.0]])
-    model.compile("adam", lr=0.001,trainable_variable = [a])
+    model.compile("adam", lr=0.001,external_trainable_variables = [a])
     model.predict(input_dummy)
     model.restore("heat_model_weights-717.weights.h5")
     return model,a
