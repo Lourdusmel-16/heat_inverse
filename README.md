@@ -22,4 +22,4 @@ This project explores using Deep Learning to solve partial differential equation
 - `requirements.txt`: Project dependencies.
 
 ## About
-Developed by Lourdus Rogin Melkrin S( Pursuing in Chemical Engineering at IIT (ISM) Dhanbad)
+Developed by Lourdus Rogin Melkrin S( Pursuing Chemical Engineering at IIT (ISM) Dhanbad)
