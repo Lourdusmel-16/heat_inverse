@@ -99,8 +99,6 @@ print(f'mse: {mse}')
 
 model.save('heat_model_weights')
 
-#a_hist = [v[0] for v in variable_hist]
-#plt.plot(variable_hist)
 
 
 
