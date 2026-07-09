@@ -1,5 +1,5 @@
 deepxde
-tensorflow
+tensorflow-cpu
 tensorflow-probability
 numpy
 matplotlib
