@@ -8,6 +8,7 @@ t = st.slider("Select t", 0.0, 1.0, 0.5)
 
 @st.cache_resource
 def get_model():
+    #just creating the variale to intilise by training with dummy variable, NOTE during compile we do need to stick with our original parameters , this just to initialise
     a = dde.Variable(0.01)
     space = dde.geometry.Interval(0,1.0)
     time_int = dde.geometry.TimeDomain(0,1.0)
