@@ -6,7 +6,7 @@ st.title("Heat Inverse PINN Solver")
 x = st.slider("Select x", 0.0, 1.0, 0.5)
 t = st.slider("Select t", 0.0, 1.0, 0.5)
 
-
+@st.cache_resource
 def get_model():
 
     space = dde.geometry.Interval(0,1.0)
@@ -25,7 +25,7 @@ model.restore("heat_model_weights-717.weights.h5")
 
 def pred_tem(x,t):
 # note input kus be 2d array
-    input = np.array[[x,t]]
+    input = np.array([[x,t]])
     predicted = model.predict(input)
 
     return predicted[0][0]
