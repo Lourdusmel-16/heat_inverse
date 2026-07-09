@@ -16,12 +16,11 @@ def get_model():
     network = dde.nn.FNN([2]+ [30]*3 +[20]*3 + [1],'sin','Glorot normal')
 
     data = dde.data.TimePDE(geotime,None,[],num_domain=0)
-
-    return dde.Model(data,network)
+    model = dde.Model(data,network)
+    return model.restore("heat_model_weights-717.weights.h5")
 
 model = get_model()
-model.build()
-model.restore("heat_model_weights-717.weights.h5")
+
 
 def pred_tem(x,t):
 # note input kus be 2d array
