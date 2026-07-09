@@ -1,6 +1,7 @@
 deepxde
 tensorflow-cpu
 tensorflow-probability
+tf-keras
 numpy
 matplotlib
 streamlit
