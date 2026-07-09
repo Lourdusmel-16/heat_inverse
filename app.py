@@ -17,7 +17,8 @@ def get_model():
 
     data = dde.data.TimePDE(geotime,None,[],num_domain=0)
     model = dde.Model(data,network)
-    return model.restore("heat_model_weights-717.weights.h5")
+    model.restore("heat_model_weights-717.weights.h5")
+    return model
 
 model = get_model()
 
