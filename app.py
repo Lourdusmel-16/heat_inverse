@@ -1,5 +1,6 @@
 import deepxde as dde
 import numpy as np
+import streamlit as st
 
 def get_model():
 
