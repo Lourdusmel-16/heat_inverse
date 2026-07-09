@@ -25,10 +25,10 @@ def get_model():
 
 model,a = get_model()
 
-alpha = a.numpy()
+a = a.numpy()
 
 st.subheader("Model Parameters")
-st.metric(label="Identified Thermal Diffusivity (α)", value=f"{alpha_value:.6f}")
+st.metric(label="Identified Thermal Diffusivity (α)", value=f"{a:.6f}")
 
 def pred_tem(x,t):
 # note input kus be 2d array
