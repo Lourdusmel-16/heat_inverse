@@ -9,8 +9,8 @@ t = st.slider("Select t", 0.0, 1.0, 0.5)
 
 def get_model():
 
-    space = dde.geometry.Tnterval(0,1.0)
-    time_int = dde.geometry.TimeInterval(0,1.0)
+    space = dde.geometry.Interval(0,1.0)
+    time_int = dde.geometry.TimeDomain(0,1.0)
     geotime = dde.geometry.GeometryXTime(space,time_int)
 
     network = dde.nn.FNN([2]+ [30]*3 +[20]*3 + [1],'sin','Glorot normal')
