@@ -8,7 +8,7 @@ t = st.slider("Select t", 0.0, 1.0, 0.5)
 
 @st.cache_resource
 def get_model():
-
+    a = dde.Variable(0.01)
     space = dde.geometry.Interval(0,1.0)
     time_int = dde.geometry.TimeDomain(0,1.0)
     geotime = dde.geometry.GeometryXTime(space,time_int)
@@ -18,14 +18,14 @@ def get_model():
     data = dde.data.TimePDE(geotime,None,[],num_domain=0)
     model = dde.Model(data,network)
     input_dummy = np.array([[0.0,0.0]])
-    model.compile("adam", lr=0.001)
+    model.compile("adam", lr=0.001,trainable_variable = [a])
     model.predict(input_dummy)
     model.restore("heat_model_weights-717.weights.h5")
-    return model
+    return model,a
 
-model = get_model()
+model,a = get_model()
 
-alpha = model.external_trainable_variables[0].numpy()
+alpha = a.numpy()
 
 st.subheader("Model Parameters")
 st.metric(label="Identified Thermal Diffusivity (α)", value=f"{alpha_value:.6f}")
