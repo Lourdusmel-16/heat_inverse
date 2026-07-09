@@ -25,7 +25,7 @@ def get_model():
 
 model = get_model()
 
-alpha = model.external_trainable_variables[0].numpy()
+alpha = model.external_trainable_variables.numpy()
 
 st.subheader("Model Parameters")
 st.metric(label="Identified Thermal Diffusivity (α)", value=f"{alpha_value:.6f}")
