@@ -21,7 +21,7 @@ def get_model():
 
 model = get_model()
 
-model.restore("heat_model_weights-3000.ckpt")
+model.restore("heat_model_weights-717.weights.h5")
 
 def pred_tem(x,t):
 # note input kus be 2d array
